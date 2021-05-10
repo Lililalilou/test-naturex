@@ -1,0 +1,72 @@
+@import './variables';
+
+.video {
+  position: relative;
+  @media only screen and (max-width: $breakpoint-down-large) {
+    margin-top: 50px;
+  }
+
+  &__player {
+    height: 180px;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      height: 100vh;
+    }
+    > iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__slider {
+    overflow: hidden;
+    .video__overlay {
+      height: 100%;
+      transform: translateY(-100%);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./hummingbird.jpg') no-repeat center;
+    background-size: cover;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__play-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: -1.2px;
+    opacity: 0.7;
+    padding: 50px 0 18px 0;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      font-size: $font-md;
+    }
+  }
+  &__play-button {
+    height: 65px;
+    width: 65px;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      height: 110px;
+      width: 110px;
+    }
+    border: 4px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  &__play-icon {
+    font-size: $font-md;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      font-size: $font-lg;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import './variables';
+
+.menu {
+  width: 200px;
+  border-top: 1px solid white;
+
+  > li {
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px;
+
+    &:hover {
+      background: $shadow;
+    }
+  }
+}

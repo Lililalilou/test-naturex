@@ -1,0 +1,88 @@
+@import './variables';
+
+.view {
+  flex-basis: 20%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
+  &__background {
+    transition: all 0.3s ease-in-out;
+    height: 224px;
+    width: 100%;
+    max-height: 224px;
+    object-fit: cover;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      height: 680px;
+      max-height: 680px;
+    }
+  }
+  &__content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 60px 14px 46px 14px;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      left: 80px;
+    }
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-transform: uppercase;
+    font-size: $font-md;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 0;
+      &:first-child {
+        font-weight: 700;
+      }
+    }
+    @media only screen and (min-width: $breakpoint-up-large) {
+      font-size: 46px;
+      line-height: normal;
+      letter-spacing: -1px;
+    }
+  }
+  &__content {
+    display: none;
+    min-height: 10px;
+    border-bottom: 1px solid white;
+    @media only screen and (min-width: $breakpoint-up-large) {
+      border: 0;
+    }
+
+    .content {
+      margin-left: 40px;
+      margin-right: 20px;
+      padding: 20px;
+      text-transform: uppercase;
+      background: $shadow;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-up-large) {
+    &:hover {
+      flex-grow: 8;
+      flex-basis: 640px;
+      .view {
+        &__background {
+          zoom: 1.2;
+        }
+        &__content {
+          display: flex;
+        }
+      }
+    }
+  }
+}
